@@ -13,14 +13,14 @@
     <div class="form-style">
         <h1>Registration</h1>
         <form name="registration" action="" method="POST" >
-            <input type="email" id="user_email" name="uname" placeholder="Username" required /><br>
-            <input type="text"  id="first_name" name="fname" placeholder="First Name" required onclick="username_Validation()"/><br>
-            <input type="text"  id="last_name" name="lname" placeholder="Last Name" required onclick="ufname_Validation()"/><br>
+            <input type="email" id="user_email" name="uname" placeholder="Username" required onfocusout="username_Validation()" /><br>
+            <input type="text"  id="first_name" name="fname" placeholder="First Name" required onfocusout="ufname_Validation()"/><br>
+            <input type="text"  id="last_name" name="lname" placeholder="Last Name" required onfocusout="ulname_Validation()"/><br>
             <label id="gender">Gender:</label><br>
             <input type="radio" name="gender" value="Male" /><span>Male</span>
             <input type="radio" name="gender" value="Female" /><span>Female</span><br>
-            <input type="text"  id="user_address" name="addr" placeholder="Address" onclick="validGender()"/><br>
-            <input type="password" id="user_password" name="pwd" placeholder="Password" required onclick="addr_Validation()"/><br><br>
+            <input type="text"  id="user_address" name="addr" placeholder="Address" onfocusout="addr_Validation()"/><br>
+            <input type="password" id="user_password" name="pwd" placeholder="Password" required onfocusout="pass_Validation()"/><br><br>
             <input type="submit" value="Sign Up" name="signupbtn" onclick="validateForm()" />
             <input type="submit" value="Sign in" name="signinbtn" onclick="toLoginPage()"/>
         </form>

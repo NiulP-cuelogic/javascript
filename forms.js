@@ -27,49 +27,14 @@ function validateForm(){
         return true;   
     }   
     }
+    }       
     }
     }
-    }/*function validateForm()
-{
-    var uname = document.registration.username;
-    var ufname = document.registration.fname;
-    var ulname = document.registration.lname;
-    var umsex = document.registration.msex;
-    var ufsex = document.registration.fsex;
-    var uaddr = document.registration.addr;
-    var pass = document.registration.user-password;
-    if(username_Validation(username))
-    {
-    if(ufname_Validation(ufname))
-    {
-    if(ulname_Validation(ulname))
-    {
-    if(validGender(umsex,ufsex))
-    {
-    if(addr_Validation(addr))
-    {
-    if(pass_Validation(pass))
-    {
-
-    }
-    }
-    }    
-    }    
-    }
-    }
-    return false;
-}*/
     }
     return false;
     
 }
-function field1()
-{
-    if(username_Validation()){
-        return true;
-    }
-    return false;
-}
+
 function username_Validation()
 {
     var username = document.registration.uname;
