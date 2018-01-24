@@ -1,0 +1,35 @@
+.form-style input[type="text"],
+.form-style input[type="date"],
+.form-style input[type="datetime"],
+.form-style input[type="email"],
+.form-style input[type="number"],
+.form-style input[type="search"],
+.form-style input[type="time"],
+.form-style input[type="url"],
+.form-style textarea{
+    padding: 2px;
+    margin: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+form{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+}
