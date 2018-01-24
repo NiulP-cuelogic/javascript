@@ -8,7 +8,7 @@ function validateForm(event)
         alert("form is complete..");
         var x = getdata();
         var json  = JSON.stringify(x);
-        window.location = "login_page.html";
+        window.location = "profile.html";
         return true;
     }   
     alert("Form is incomplete..");
