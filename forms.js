@@ -63,7 +63,13 @@ function validateForm(){
     return false;
     
 }
-
+function field1()
+{
+    if(username_Validation()){
+        return true;
+    }
+    return false;
+}
 function username_Validation()
 {
     var username = document.registration.uname;
