@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="loadpage()">
+<script src="add_user.js"></script>
+<script src="form_2.js"></script>
+<script src="todo.js"></script>
+
+<div id="container">
+    <h1 id="username"></h1>
+    
+</div>
+<div id="to-dos"><input id="task"><button id="add">Add</button>
+<div id="todos"></div>
+</div>
+
+    
+    <script>
+        function loadpage()
+        {
+            var x = JSON.parse(localStorage.getItem("user"));
+            var username=localStorage.getItem('username');
+            window.alert(x.length);
+            var key=search(username,x);
+      
+           /* username=localStorage.getItem('username');
+            var y = document.getElementById("username");
+            document.getElementById("username").innerHTML=username;*/
+            window.alert(key);
+            
+            document.getElementById("username").innerHTML = x[key].email;
+
+        }
+        function search(username,x){
+                for(i=0;i<x.length;i++)
+                {
+                    if(username==x[i].email)
+                    return i;
+                    else
+                    return null;
+                }
+            }
+
+        
+    </script>
+    <script>
+    
+    function get_todos() {
+    var todos = new Array;
+    var todos_str = localStorage.getItem('todo');
+    if (todos_str !== null) {
+        todos = JSON.parse(todos_str); 
+    }
+    
+    return todos;
+}
+ 
+function add() {
+    var task = document.getElementById('task').value;
+ 
+    var todos = get_todos();
+    todos.push(task);
+    localStorage.setItem('todo', JSON.stringify(todos));
+ 
+    show();
+ 
+    return false;
+}
+ 
+function remove() {
+    var id = this.getAttribute('id');
+    var todos = get_todos();
+    todos.splice(id, 1);
+    localStorage.setItem('todo', JSON.stringify(todos));
+ 
+    show();
+ 
+    return false;
+}
+ 
+function show() {
+    var todos = get_todos();
+ 
+    var html = '<ul>';
+    for(var i=0; i<todos.length; i++) {
+        html += '<li>' + todos[i] + '<button class="remove" id="' + i  + '">x</button></li>';
+    };
+    html += '</ul>';
+ 
+    document.getElementById('todos').innerHTML = html;
+ 
+    var buttons = document.getElementsByClassName('remove');
+    for (var i=0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', remove);
+    };
+}
+ 
+document.getElementById('add').addEventListener('click', add);
+show();
+    
+    </script>
+</body>
+</html>

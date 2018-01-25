@@ -1,14 +1,16 @@
 var username;
 
+
 function validateForm(event)
 {   
     event.preventDefault();
     if(username_Validation() && ufname_Validation() && ulname_Validation() && validGender() && addr_Validation() && pass_Validation() && pass_Verify())
     {
-        alert("form is complete..");
-        var x = getdata();
+        userdata();
+       /* var x = getdata();
         var json  = JSON.stringify(x);
-        window.location = "profile.html";
+        console.log(json);*/
+       // window.location = "profile.html";
         return true;
     }   
     alert("Form is incomplete..");
@@ -17,7 +19,7 @@ function validateForm(event)
 
 function username_Validation(username)
 {
-    var uname = document.vform.username;
+    var uname = document.getElementById("user_name");
     var y = document.getElementsByTagName("label");
     var z = document.getElementsByClassName("div");
     var x =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -136,25 +138,3 @@ function pass_Verify(password_confirm)
     }
 }
 
-function user(Fname,Lname,Email,Address,pwd,gender) {
-    this.Fname = Fname;
-    this.Lname = Lname;
-    this.Email = Email;
-    this.Address = Address;
-    this.pwd = pwd;
-    this.gender = gender;
-}
-
-
-function getdata()
-{   
-    var Fname= document.getElementById("first_name").value;
-    var Lname= document.getElementById("last_name").value;
-    var Email= document.getElementById("user_name").value;
-    var Address= document.getElementById("user_address").value;
-    var pwd= document.getElementById("password_verified").value;
-    var gender= document.getElementById("Gender_select").value;
-
-    var new_user = new user(Fname,Lname,Email,Address,pwd,gender);
-    return new_user;
-}
