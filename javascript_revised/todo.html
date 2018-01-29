@@ -9,6 +9,18 @@
     <script src="./javascript/validation.js"></script>
     <script src="./javascript/todo.js"></script>
     <link rel="stylesheet" href="./css/userprofile.css">
+    <style>
+        ul li{
+            list-style: none;
+            display: inline-flex;
+            margin: 20px;
+        }
+        table tr{
+            margin: 20px;
+            width: 100%;
+        }
+    
+    </style>
 </head>
 <body>
     <header>
@@ -38,11 +50,31 @@
       </div>
 
       <button id="save" onclick="saveItem()">Save</button>
+      <button id="display" onclick="displayItem()">Display</button>
+      <button id="delete" onclick ="deleteItem()" > Delete</button> 
+     
 
-      <div id="show_contents">
-          
-      </div>
-   
-    
+     
+     <div>
+         <table id="todotable">
+             <tr>
+                 <th>To-do title</th>
+                 <th>Date</th>
+                 <th>Reminder</th>
+                 <th>Reminder date</th>
+                 <th>Category</th>
+                 <th>Visibility</th>
+             </tr>
+             <tr>
+                 <td id="todotitle"></td>
+                 <td id="tododate"></td>
+                 <td id="todoreminder"></td>
+                 <td id="todoreminderdate"></td>
+                 <td id="todocategory"></td>
+                 <td id="todovisibility"></td>
+             </tr>
+         </table>
+     </div>
+      
 </body>
 </html>

@@ -53,6 +53,7 @@
         }
         
     }*/
+    var todoarr  = new Array();
     function saveItem(){
         console.log("called..");
         var title=document.getElementById("todoTitle").value;
@@ -67,18 +68,72 @@
         var x=search(username,allusers);
         if(allusers[x].todo==undefined)
         allusers[x].todo= new Array();
-        allusers[x].todo.push(JSON.stringify(item));
+        allusers[x].todo.push(item);
         localStorage.setItem("allusers", JSON.stringify(allusers));
         console.log(allusers);
         var todoList = allusers[x].todo;
-        console.log(todoList);
+        //console.log(todoList);
         var arr = JSON.parse(todoList);
         JSON.stringify(arr);
-        console.log(arr);
-        console.log(title);
-        console.log(reminder);
+        //console.log(arr);
+        todoarr.push(arr);
+        console.log(todoarr[0]);
+        //console.log(arr);
+        //console.log(arr.title);
+        //console.log(arr.reminder);
+       
+       /*document.getElementById("todotitle").innerHTML = arr.title;
+       document.getElementById("tododuedate").innerHTML = arr.duedate;
+       document.getElementById("todocategory").innerHTML = arr.category;
+       document.getElementById("todoreminder").innerHTML = arr.reminder;
+       document.getElementById("todoreminderdate").innerHTML = arr.reminderdate;
+       document.getElementById("todovisibility").innerHTML = arr.visibility;*/
         //window.location="todo.html";
     }
+
+    function displayItem()
+    {
+        console.log("called..");
+        localStorage.getItem('username');
+       // var item=new getitem(title,duedate,category,reminder,reminderdate,visibility);
+        var allusers = JSON.parse(localStorage.getItem('allusers'));
+        var x=search(username,allusers);
+        // if(allusers[x].todo==undefined)
+        // allusers[x].todo= new Array();
+        
+        // localStorage.setItem("allusers", JSON.stringify(allusers));
+        //console.log(allusers);
+        var todoarr = allusers[x].todo;
+        for(var i=0;i<todoarr.length;i++)
+        {
+            //var arr=JSON.parse(todoarr[i]);
+             //window.alert(arr);
+            var title=todoarr[i].title;
+            var duedate=todoarr[i].duedate;
+            var category=todoarr[i].category;
+            var reminder=todoarr[i].reminder;
+            var reminderdate=todoarr[i].reminderdate;
+            var visibility=todoarr[i].visibility;
+        
+            var oldrow=document.getElementById("todotable");//parent
+            var node = document.createElement("tr");
+            node.setAttribute("id", i);
+            oldrow.appendChild(node);
+            document.getElementById(i).innerHTML=" <td>"+(i+1)+". <input type='checkbox' style='height:20px;width:20px' onchange=makestrikethrough("+i+")> "+"</td>"+
+                                                        "<td>"+title+"</td>"+
+                                                      "<td>"+category+"</td>"+
+                                                      "<td>"+duedate+"</td>"+
+                                                      "<td>"+reminder+"</td>"+
+                                                      "<td>"+reminderdate+"</td>"+
+                                                      "<td>"+visibility+"</td>";
+            
+        }
+        }
+
+        function deleteItem()
+        {
+            
+        }
     
     function getitem(title,duedate,category,reminder,reminderdate,visibility,item)
     {
