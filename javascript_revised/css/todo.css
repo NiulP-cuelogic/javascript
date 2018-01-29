@@ -1,0 +1,22 @@
+header{
+    background-color: rgba(0,0,0,0.5);
+    height: 100px;
+    width: 100%;
+}
+
+.topnav{
+    display: inline-flex;
+    float: right;
+    list-style: none;
+}
+
+a{
+    margin: 40px;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: #a2c73c;
+    transition: 500ms;
+}

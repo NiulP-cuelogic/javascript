@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./javascript/add_user.js"></script>
+    <script src="./javascript/validation.js"></script>
+    <script src="./javascript/todo.js"></script>
+    <link rel="stylesheet" href="./css/userprofile.css">
+    <style>
+        ul li{
+            list-style: none;
+            display: inline-flex;
+            margin: 20px;
+        }
+        table tr{
+            margin: 20px;
+            width: 100%;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="content">
+                <ul class="topnav">
+                    <li>
+                        <a href="userprofile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="form.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+        <div class="container">
+              <p id="username" style="display:none"></p>
+            <div id="newItemForm">
+          <label for="title">Title:</label> <input type="text" id=todoTitle> <br>
+          <label for="Category">Select Categories</label>  <input name="Category" type="radio" value="office"> Office <input type="radio"  name="Category" value="home"> Home <input type="radio"  name="Category" value="personal"> Personal <br>
+          <label for="date">Due Date: </label> <input type="date" id="Due_date"> <br>
+          <label for="reminder"> Reminder?</label> <input id="reminder" type="checkbox" onchange="addreminder()"> <br> <div id="time" style="display:none"> <input type="date" name="" id="Rdate"> </div>
+         <label for="public?">Visibility:</label> <input type="radio" name="visibility" value="Public"> Public <input type="radio" name="visibility" value="Private"> Private <br>
+      </div>
+      </div>
+
+      <button id="save" onclick="saveItem()">Save</button>
+      <button id="display" onclick="displayItem()">Display</button>
+      <button id="delete" onclick ="deleteItem()" > Delete</button> 
+     
+
+     
+     <div>
+         <table id="todotable">
+             <tr>
+                 <th>To-do title</th>
+                 <th>Date</th>
+                 <th>Reminder</th>
+                 <th>Reminder date</th>
+                 <th>Category</th>
+                 <th>Visibility</th>
+             </tr>
+             <tr>
+                 <td id="todotitle"></td>
+                 <td id="tododate"></td>
+                 <td id="todoreminder"></td>
+                 <td id="todoreminderdate"></td>
+                 <td id="todocategory"></td>
+                 <td id="todovisibility"></td>
+             </tr>
+         </table>
+     </div>
+      
+</body>
+</html>

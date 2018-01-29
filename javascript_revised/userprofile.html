@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/userprofile.css">
+    <script src="./javascript/add_user.js"></script>
+    <script src="./javascript/validation.js"></script>
+    <script src="userprofile.js"></script>
+    <script src="todo.js"></script>
+    
+</head>
+<body onload="loadprofile()">
+    <main>
+        <div class="container">
+                <p>My Profile</p>
+                <label for="PR_EMAIL">Email</label> <input type="text" id="PR_EMAIL" readonly>
+                <label for="PR_FN">Fast Name</label> <input type="text" name="" id="PR_FNAME" readonly>
+                <label for="PR_LN">Last Name</label> <input type="text" name="" id="PR_LNAME" readonly>
+                
+                <label for="PR_ADDRESS">Address</label> <input type="text" name="" id="PR_ADDRESS" readonly> 
+ 
+                <div id="choose" style="display:none"> <input type="file" > </div>
+                <button id="editprofile" onclick="edit()">Edit</button>
+                <button id="submit" onclick="updateinfo()">Update</button>
+                <button id="todo" onclick="window.location='todo.html'"> Proceed to to-do</button>
+        </div>
+
+    </main>
+<script>
+
+var obj;
+var allusers;
+
+function loadprofile()
+{
+    
+    console.log("called..");
+    var x = JSON.parse(localStorage.getItem('user'));
+    var User = JSON.stringify(x);
+    console.log(x);
+     allusers = JSON.parse(localStorage.getItem('allusers'));
+    var username = JSON.parse(localStorage.getItem('username'));
+    var key=  search(username,allusers);
+    obj = allusers[key];
+    document.getElementById("PR_EMAIL").innerHTML = obj.email;
+    document.getElementById("PR_FNAME").innerHTML= obj.fname;
+    document.getElementById("PR_LNAME").innerHTML= obj.lname;
+    document.getElementById("PR_ADDRESS").innerHTML = obj.address;
+
+    document.getElementById("PR_EMAIL").value = obj.email;
+    document.getElementById("PR_FNAME").value= obj.fname;
+    document.getElementById("PR_LNAME").value= obj.lname;
+    document.getElementById("PR_ADDRESS").value = obj.address;
+
+    function search(){
+        for(var key=0;key<allusers.length;key++)
+        {
+            if(username == allusers[key].email)
+            {
+                return key;
+            }
+        }
+    }
+}
+
+function edit()
+{
+    
+    console.log("called..");
+    document.getElementById("PR_EMAIL").readOnly = false;
+    document.getElementById("PR_FNAME").readOnly = false;
+    document.getElementById("PR_LNAME").readOnly = false;
+    document.getElementById("PR_ADDRESS").readOnly = false;
+
+    var para = document.createElement("input");
+    para.setAttribute("type", "file");
+    para.setAttribute("style", "display: block;");
+    para.setAttribute("style", "z-index: 1000;");
+    var element = document.getElementById("choose");
+    element.appendChild(para);
+}
+
+function updateinfo(){
+    
+    console.log("called..");
+       obj.fname= document.getElementById("PR_FNAME").value;
+       obj.lname=document.getElementById("PR_LNAME").value;
+       //obj.gender= document.getElementById("PR_GENDER").value;
+       obj.address=  document.getElementById("PR_ADDRESS").value;
+       //obj.imgurl= document.getElementById("PR_IMAGE").value;
+      // var allEntries = JSON.parse(localStorage.getItem('allEntries'));
+     // allEntries.push(obj);
+
+     localStorage.setItem("allusers", JSON.stringify(allusers));
+     console.log(allusers);
+       window.alert("profile updated successfully");
+}
+
+function to_do()
+{
+    window.location = "todo.html";
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="./javascript/validation.js"></script>
+    <script src="./javascript/add_user.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <form method="POST" action="" name="vform" >
+            <div id="username_div">
+              <label>Username</label> <br>
+              <input type="email" id="user_name" class="textInput" onfocusout="username_Validation(this)" required>
+            <div id="name_error"></div>
+            </div>
+            <div id="first_name_div">
+              <label>First name</label> <br>
+              <input type="text" id="first_name"  class="textInput" onfocusout="firstname_Validation(this)" required> 
+              <div id="first_name_error"></div>
+            </div>
+            <div id="last_name_div">
+                <label>Last name</label> <br>
+                <input type="text" id="last_name"  class="textInput" onfocusout="lastname_Validation(this)" required>
+                <div id="last_name_error"></div>
+            </div>
+            <div id="Gender_select">
+                <label>Gender</label>
+                <input type="radio"  name ="gender" value="Male" /><span>Male</span>
+                <input type="radio"  name="gender"  value="Female" /><span>Female</span><br>
+            </div>
+            <div id="address_div">
+                <label>Address</label>
+                <input type="text" id="user_address"  class="textInput" onfocusout="address_Validation(this)" required>
+                <div id="addr_error"></div>
+            </div>
+            <div id="password_div">
+              <label>Password</label> <br>
+              <input type="password" id="password" class="textInput" onfocusout="password_Validation(this)" required>
+              <div id="pass_error"></div>
+            </div>
+            <div id="pass_confirm_div">
+               <label>Confirm password</label> <br>
+               <input type="password" id="password_verified" class="textInput" onfocusout="password_Verification(this)" required>
+               <div id="password_error"></div>
+            </div>
+            <div>
+            <input type="submit" name="register" value="REGISTER" class="btn" onclick="ValidateForm(event)" required>
+            <input type="submit" name="signin" value="LOGIN" class="btn" onclick="window.location = 'login.html'">
+            </div>
+        </form>
+       </div>
+</body>
+</html>
