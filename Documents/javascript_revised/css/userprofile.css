@@ -1,0 +1,21 @@
+.container
+{
+    text-align: center;
+    border-style: dotted;
+}
+
+#Update{
+    background-color: #a2c73c;
+color: whitesmoke;
+border-style: none;
+border-radius: 20px;
+width: 126px;
+height: 44px;
+margin: 20px;
+}
+button#Update:hover{
+    background-color: #0072bc;
+    border-style: solid 2px;
+    color: whitesmoke;
+    transition: 500ms;
+}
