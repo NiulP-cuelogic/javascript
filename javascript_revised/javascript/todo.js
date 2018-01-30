@@ -62,18 +62,19 @@
         var reminder=document.getElementById("reminder").checked;
         var reminderdate=document.getElementById("Rdate").value;
         var visibility=document.querySelector('input[name = "visibility"]:checked').value;
+      
         var item=new getitem(title,duedate,category,reminder,reminderdate,visibility);
-        localStorage.getItem('username');
+        var username = JSON.parse(localStorage.getItem('username'));
         var allusers = JSON.parse(localStorage.getItem('allusers'));
         var x=search(username,allusers);
-        if(allusers[x].todo==undefined)
-        allusers[x].todo= new Array();
+        if(allusers[x].todo == undefined)
+            allusers[x].todo= new Array();
         allusers[x].todo.push(item);
         localStorage.setItem("allusers", JSON.stringify(allusers));
         console.log(allusers);
         var todoList = allusers[x].todo;
-        //console.log(todoList);
-        var arr = JSON.parse(todoList);
+        console.log(todoList);
+        var arr = todoList;
         JSON.stringify(arr);
         //console.log(arr);
         todoarr.push(arr);
@@ -94,7 +95,7 @@
     function displayItem()
     {
         console.log("called..");
-        localStorage.getItem('username');
+        var username = JSON.parse(localStorage.getItem('username'));
        // var item=new getitem(title,duedate,category,reminder,reminderdate,visibility);
         var allusers = JSON.parse(localStorage.getItem('allusers'));
         var x=search(username,allusers);
@@ -103,7 +104,13 @@
         
         // localStorage.setItem("allusers", JSON.stringify(allusers));
         //console.log(allusers);
-        var todoarr = allusers[x].todo;
+
+        if( !allusers[x].todo ) {
+            return;
+        }
+
+        todoarr = allusers[x].todo;
+
         for(var i=0;i<todoarr.length;i++)
         {
             //var arr=JSON.parse(todoarr[i]);
@@ -114,7 +121,6 @@
             var reminder=todoarr[i].reminder;
             var reminderdate=todoarr[i].reminderdate;
             var visibility=todoarr[i].visibility;
-        
             var oldrow=document.getElementById("todotable");//parent
             var node = document.createElement("tr");
             node.setAttribute("id", i);
@@ -126,16 +132,30 @@
                                                       "<td>"+reminder+"</td>"+
                                                       "<td>"+reminderdate+"</td>"+
                                                       "<td>"+visibility+"</td>";
-            
+                                                      
         }
         }
 
         function deleteItem()
         {
-            
+        var username = JSON.parse(localStorage.getItem('username'));
+        var allusers = JSON.parse(localStorage.getItem('allusers'));
+        var x = search(username, allusers);
+        var todolist = allusers[x].todo;
+        for (i = 0; i < todolist.length; i++) {
+        var arr = todolist[i];
+        if (document.getElementById("check" + i).checked == true) {
+            todolist.splice(i, 1);
+            i = -1;
         }
-    
-    function getitem(title,duedate,category,reminder,reminderdate,visibility,item)
+    }
+    setArray(allusers);
+    location.reload();
+
+
+        }
+    var status = "doing";
+    function getitem(title,duedate,category,reminder,reminderdate,visibility)
     {
     this.title=title;
     this.duedate=duedate;
@@ -145,9 +165,9 @@
     this.visibility=visibility;
     }
     function search(username,allusers){
-        for (x=0; x<allusers.length; x++){
-            if(username==allusers[x].Email)
-                return x;
+        for (var i=0; i<allusers.length; i++){
+            if(username===allusers[i].email)
+                return i;
            }
        }
     
