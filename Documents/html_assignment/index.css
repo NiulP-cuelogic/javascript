@@ -1,0 +1,411 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "Quicksand";
+    font-size: 16px;
+}
+
+header{
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 100;
+}
+.container{
+    width: 1000px;
+    margin:0 auto;
+    
+}
+.container .header-logo{ 
+    float: left;
+    position: fixed;
+}
+.header-logo img{
+    margin-top: 40px;
+}
+.content{
+    float: right;
+    margin-top: 7px;
+}
+
+.container .content ul li {
+    display: inline;
+    margin: 20px;
+    list-style: none;
+}
+
+.container .content ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.container .content ul li a:hover{
+    color: #a2c73c;
+    transition: 500ms;
+}
+
+#signupbtn{
+    background-color: #a2c73c;
+color: white;
+border-radius: 30px;
+border-style: none;
+height: 39px;
+width: 79px;
+}
+#signupbtn:hover{
+    background-color: #0072bc;
+    transition: 500ms;
+}
+
+.banner{
+    background-image: url(Assets/images/banner-img.png);
+    object-fit: cover;
+    height: 700px;
+}
+.banner-content{
+    margin: 0 auto;
+    width: 900px;
+    text-align: center;
+    padding-top: 156px;
+}
+
+.banner-text{
+    font-size:30px;
+    color: white;
+}
+.banner-btn button{
+    width: 510px;
+    border-radius: 30px;
+    background-color: #a2c73c;
+    border-style:none;
+    color: white;
+    font-size: 20px;
+}
+.banner-cont{
+    line-height: 102px;
+}
+
+.grid .wrapper{
+    margin:0 auto;
+    width: 900px;
+    overflow: hidden;
+}
+
+.grid a{
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.thumbnail-1{
+    margin: 0 auto;
+}
+.g1p1{
+    color: rgb(37, 26, 26);
+    font-weight: bold;
+}
+.g1p2{
+    font-weight: bold;
+    color: whitesmoke;
+}
+.g1p3{
+    font-weight: bold;
+    color: grey;
+}
+.row1{
+   overflow: hidden;
+}
+.thumbnail-1{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    padding: 0px;
+    float: left;
+    background-color: #a2c73c;
+    position: relative;
+
+}
+
+.thumbnail-2{
+    padding: 0px;
+    width: 300px;
+    height: 300px;
+    float: left;  
+    position: relative;
+   
+}
+
+.thumbnail-3{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    padding: 0px;
+    float: left;
+    background-color:  #075daa;
+    position: relative;
+}
+.g3p1{
+    color:rgb(139, 137, 137);
+    font-weight: bold;
+}
+.g3p2{
+    color: white;
+    font-weight: bold;
+}
+
+.row2{
+    overflow: hidden;
+}
+.thumbnail-4{
+    height: 300px;
+    width: 300px;
+    padding: 0px;
+    float: left;
+    position: relative;
+}
+
+.thumbnail-5{
+    height: 300px;
+    width: 300px;
+    padding: 0px;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}  
+.thumbnail-5 img{
+    position: absolute;
+margin-top: 90px;
+margin-left: -23px;
+} 
+
+.g5p1{
+    position: absolute;
+margin-top: 177px;
+margin-left: 66px;
+color: grey;
+font-weight: bold;
+
+}
+.g5p2{
+    position: absolute;
+margin-left: 74px;
+margin-top: 202px;
+color: grey;
+font-weight: bold;
+
+}
+.g5p3{
+    position: absolute;
+margin-left: 92px;
+margin-top: 237px;
+font-weight: bold;
+}
+.thumbnail-6{
+    float: left;
+    width: 300px;
+    height: 300px;
+    padding: 0px;   
+    position: relative;
+}
+
+.row3{
+    overflow: hidden;
+}
+
+.thumbnail-7{
+    float: left;
+    width: 300px;
+    height: 300px;
+    padding: 0px;
+    text-align: center;
+    background-color: #4494d1;
+    position: relative;
+}
+.thumbnail-7 p{
+    font-weight: bold;
+    color: rgb(184, 170, 170);
+}
+.thumbnail-8{
+    float: left;
+    width: 300px;
+    height: 300px;
+    padding: 0px;
+    position: relative;
+    
+}
+
+.thumbnail-9{
+    text-align: center;
+    float: left;
+    width: 300px;
+    height: 300px;
+    background-color: #0eb049;
+    line-height: 14px;
+    position: relative;
+}
+.g9p1{
+    color: rgb(37, 33, 33);
+    font-weight: bold;
+}
+
+.g9p2{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.g9p3{
+    color: rgb(201, 196, 196);
+}
+.sect3{
+    text-align: center;
+    list-style: none;
+    background-color: #0072bc;
+    color: white;
+}
+.sect3-title{
+    font-size: 36px;
+    padding: 4px;
+}
+.sect3-para{
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 44%;
+    line-height: 174%;
+}
+
+.sect3-btn{
+    margin: 14px;
+    padding: 53px;
+}
+.sect3-btn button{
+    width: 31em;
+    height: 4em;
+    border-radius: 30px;
+    border-style: none;
+    background-color: #a2c73c;
+}
+.sect3-btn button:hover{
+    background-color: #0072bc;
+    border-style: solid;
+    border-color: whitesmoke;
+    color: whitesmoke;
+    transition: 500ms;
+}
+
+.sect3-btn button h5{
+    font-size: 24px;
+    margin: 0 auto;
+    color: white;
+}
+
+.upper-icons ul{
+    text-align: center;
+}
+.upper-icons ul li{
+    display: inline-block;
+    width: 26%;
+    text-align: center;
+    padding: 40px;
+    font-weight: lighter;
+}
+
+.lower-icons ul li{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding: 40px;
+    font-weight: lighter;
+}
+.lower-icons ul{
+    text-align: center;
+}
+.icon-grid button{
+    background-color: whitesmoke;
+color: #0072bc;
+border: solid;
+border-width: 2px;
+border-color: #a2c73c;
+width: 260px;
+border-radius: 30px;
+height: 44px;
+}
+.icon-grid button:hover{
+    background-color:#a2c73c;
+}
+
+footer{
+    width: 100%;
+    background-color:  #0f151a;
+}
+footer .wrapper{
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+footer .wrapper .logowrapper{
+    float: left;
+    width: 600px;
+    text-align: center;
+}
+
+footer .wrapper .contentwrapper{
+    float: left;
+    width: 600px;
+}
+
+footer .wrapper .logowrapper .social{
+    margin: 40px;
+}
+
+footer .wrapper .logowrapper .social img{
+    margin: 40px;
+}
+.bottomnav{
+    overflow: hidden;
+    margin-top: 50px;
+}
+.contentwrapper .col1 , .col2 , .col3{
+    float: left;
+    width: 33%;
+}
+
+
+.bottomnav .col1,.col2,.col3{
+    line-height: 35px;
+   
+}
+
+.footer-logo{
+    padding-top: 40px;
+}
+.bottomnav{
+    padding-top: 40px;
+}
+.bottomnav p a{
+    text-decoration: none;
+    color: #0072bc; 
+}
+.bottomnav p a:hover{
+    color: white;
+}
+.footerwrapper{
+    text-align: center;
+    height: 72px;
+    border-top: 2px solid;
+    border-top-color: black;
+   
+}
+
+.footerwrapper h2{
+    color: #0072bc;
+    font-weight: lighter;
+    font-size: 20px;
+margin-top: 20px;
+}
