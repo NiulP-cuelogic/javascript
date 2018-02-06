@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Rammetto One', cursive;
+}
+
+body {
+    margin: 0 auto;
+    font-family:'Rammetto One', cursive;
+}
+
+.container{
+    margin: 0 auto;
+    width: 300px;
+}
+
+.email_div, .password_div , .name_div{
+    line-height: 20px;
+    margin:20px;
+}
+form{
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+input[type="text"],input[type="email"] , input[type="password"]{
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #ccc;
+    width: 242px;
+    height: 40px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: lighter;
+    font-style: normal;
+    color: darkgrey;
+}
+label{
+    color: gray;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.signup-btn{
+    overflow: hidden;
+}
+input[type='submit']
+{
+    float: right;
+    margin-right: 38px;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(221, 81, 46);
+    border-style: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    margin: 0 auto;
+    
+}
+input[type='submit']:hover{
+    background-color: rgb(243, 140, 56);
+}
+.signup-btn button a {
+    margin:0 auto;
+    text-decoration: none;
+    color: whitesmoke;
+}   

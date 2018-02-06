@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <link rel="stylesheet" href="index.css">
+   <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <script src="validation.js"></script>
+    <script src="localStorage.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="" method="post" name="vform">
+            <div class="email_div">
+                <label for="">Email</label><br>
+                <input type="email" id="email"  >
+            </div>
+            <div class="name_div">
+                <label for="">Name</label><br>
+                <input type="text" id="name"  >
+            </div>
+            <div class="password_div">
+                <label for="">Password</label><br>
+                <input type="password" id="password"  >
+            </div>
+        </form>
+        <div class="signup-btn">
+            <input type="submit" class="signup-btn" onclick="validation(event)" id="signupbtn" value="Sign up">
+            
+        </div>
+        
+    </div>
+</body>
+</html>
