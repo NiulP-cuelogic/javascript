@@ -1,4 +1,4 @@
-function validation(event)
+/*function validation(event)
 {
     event.preventDefault();
     if(email_verify() && name_verify() && password_verify())
@@ -7,10 +7,12 @@ function validation(event)
         getdata();
         return true;
     }
-    else{
+    else {
         return false;
     }
-}
+}*/
+
+
 
 function email_verify(email)
 {
@@ -60,4 +62,41 @@ function password_verify(password)
         document.getElementById("password").style.border = "1px solid #ccc";
         return true;
     }
+}
+
+
+
+
+function validation(event)
+{
+    event.preventDefault();
+   
+    var email = document.getElementById("email").value;
+    var name = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+
+    if(email=="" && name ==""  && password=="")
+    {
+        document.getElementById("email").style.border= "2px solid red";
+        document.getElementById("name").style.border = "2px solid red";
+        document.getElementById("password").style.border = "2px solid red";
+        return false;
+    }
+    else if(email_verify() && name_verify() && password_verify())
+    {
+        console.log("called");
+        getdata();
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+
+}
+function focusFunction()
+{   
+    document.getElementById("email").style.border = "1px solid #ccc"; 
+    document.getElementById("name").style.border = "1px solid #ccc"; 
+    document.getElementById("password").style.border = "1px solid #ccc"; 
 }

@@ -9,6 +9,7 @@
    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <script src="validation.js"></script>
     <script src="localStorage.js"></script>
+    <script src="profile.js"></script>
 </head>
 <body>
     
@@ -16,19 +17,19 @@
         <form action="" method="post" name="vform">
             <div class="email_div">
                 <label for="">Email</label><br>
-                <input type="email" id="email"  >
+                <input type="email" id="email" onfocus="focusFunction()" onfocusout="email_verify(this)">
             </div>
             <div class="name_div">
                 <label for="">Name</label><br>
-                <input type="text" id="name"  >
+                <input type="text" id="name" onfocus="focusFunction()" onfocusout="name_verify(this)">
             </div>
             <div class="password_div">
                 <label for="">Password</label><br>
-                <input type="password" id="password"  >
+                <input type="password" id="password" onfocus="focusFunction()" onfocusout="password_verify(this)">
             </div>
         </form>
         <div class="signup-btn">
-            <input type="submit" class="signup-btn" onclick="validation(event)" id="signupbtn" value="Sign up">
+            <input type="submit" class="signup-btn" onclick=" return validation(event)" id="signupbtn" value="Sign up">
             
         </div>
         
