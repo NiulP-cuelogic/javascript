@@ -84,7 +84,8 @@ function validation(event)
     }
     else if(email_verify() && name_verify() && password_verify())
     {
-        console.log("called");
+        
+        // objLocalStorage.getdata();
         getdata();
         return true;
     }

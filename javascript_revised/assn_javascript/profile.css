@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Rammetto One', cursive;
+   margin: 0 auto;
+}
+header{
+   
+    width: 100%;
+    background-color: whitesmoke;
+    height: 70px;
+    margin-top: 0px;
+}
+header .content{
+    margin: 0 auto;
+    width: 1000px;
+    overflow: hidden;
+}
+header .content ul{
+    float: right;
+}
+
+header .content ul li{
+    display: inline;
+    list-style: none;
+    margin:20px;
+}
+a{
+    text-decoration: none;
+    color: grey;
+}
+a:hover{
+    color: black;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1000px;
+    text-align: center;
+}
+input[type = "email"],input[type = "text"]
+{
+    font-family: 'Rammetto One', cursive;
+    color: black;
+    width: 200px;
+    height: 40px;
+}
